@@ -1,0 +1,54 @@
+$font: normal 15px / 23px "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+
+$color1: #8c95a2;
+$color2: #1f365c;
+.type-1728 {
+  .card-body {
+    font: $font;
+    color: $color1;
+
+    .card-title:hover {
+      color: $color1;
+    }
+  }
+
+  p {
+    span {
+      color: $color2;
+      font: $font;
+      font-weight: bold;
+    }
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 32px;
+    color: $color2;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .pro {
+    p {
+      white-space: nowrap;
+      color: $color2;
+      font-size: 12px;
+      line-height: 35px;
+    }
+
+    .progress {
+      // position: relative;
+      margin-bottom: 8px;
+      // z-index: 0;
+      // width: 100%;
+
+      // .progress-bar.bg-warning {
+      //   position: absolute;
+      //   left: 0;
+      //   height: 100%;
+      //   z-index: 9999;
+      // }
+    }
+  }
+}

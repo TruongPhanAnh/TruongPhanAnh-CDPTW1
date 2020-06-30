@@ -1,0 +1,160 @@
+/* Color */
+$yellow_gray: #a49c24;
+$gray_color: #999;
+$title_color: #333;
+$white: #fff;
+$gray_white: #cdcdcd;
+
+/* Font */
+$title_font: 16px;
+
+/* Background */
+$bg_overlay: rgba(0, 0, 0, 0.6);
+
+.type-3 {
+  h3 {
+    font-family: "Corona Bold Face", serif;
+  }
+
+  p {
+    color: #999;
+    top: 26px;
+    /* left: 186px; */
+    line-height: 32px;
+    text-align: center;
+  }
+  /*== Heading ==*/
+  .heading {
+    margin-bottom: 50px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .heading h3 {
+    font-weight: 600;
+    color: #222222;
+  }
+
+  .heading .subtitle {
+    font-family: "ITC Garamond Std Bold Condensed Italic", sans-serif;
+    font-size: 20px;
+    color: #7ab330;
+  }
+
+  .heading .title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .heading .title .background-text {
+    font-family: "Corona Bold Face", serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -8px;
+    font-size: 60px;
+    color: #999;
+    opacity: 0.08;
+  }
+
+  .item {
+    position: relative;
+    cursor: pointer;
+
+    .new-price {
+      color: $yellow_gray;
+      font-weight: bold;
+    }
+
+    .old-price {
+      color: $gray_color;
+      text-decoration: line-through;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h3 {
+        font-size: $title_font;
+        color: $title_color;
+      }
+
+      h3:hover {
+        color: #999;
+      }
+    }
+
+    .sale {
+      display: inline;
+      padding: 3px 7px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $yellow_gray;
+      z-index: 4;
+
+      span {
+        color: $white;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    .new {
+      @extend .sale;
+      background: #333333;
+      left: 0;
+      right: auto;
+    }
+
+    .img {
+      position: relative;
+      z-index: 1;
+
+      .actions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        opacity: 0;
+
+        a {
+          color: $title_color;
+
+          &:first-child {
+            background: $gray_white;
+            border: $gray_white;
+          }
+
+          &:last-child {
+            background: $white;
+          }
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: $bg_overlay;
+        z-index: 2;
+        opacity: 0;
+      }
+
+      &:hover {
+        &::after,
+        .actions {
+          opacity: 1;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
